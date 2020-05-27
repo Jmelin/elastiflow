@@ -1,0 +1,122 @@
+fielddata=true
+flow.client_hostname
+
+Set fielddata=true on [flow.server_hostname]
+
+PUT elastiflow-3.5.3-*/_mapping/_doc?include_type_name=true
+{
+  "properties": {
+     "flow.client_hostname": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.service_name": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.ip_version": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.tcp_flags": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.ip_protocol": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.server_hostname": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "node.hostname": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "event.type": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.client_addr": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.server_addr": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.input_ifname": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.output_ifname": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.dst_hostname": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.src_hostname": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.dst_port_name": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.src_autonomous_system": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.dst_autonomous_system": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.traffic_locality": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.application": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.autonomous_system": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.rep_tags": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.city": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.server_geo_location": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.country": { 
+       "type":     "text",
+       "fielddata": true
+     },
+     "flow.client_geo_location": { 
+       "type":     "text",
+       "fielddata": true
+     }
+  }
+}
+
+
+
+
+
+
+PUT _cluster/settings
+{
+  "transient": {
+    "search.max_buckets": 40000
+  }
+}
